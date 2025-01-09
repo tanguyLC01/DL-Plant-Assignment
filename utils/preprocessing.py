@@ -2,16 +2,15 @@ import cv2
 import math
 import numpy as np
 
-def random_crop_opencv(image, target_size=(256, 256)):
+def pad_to_square_opencv(image, target_size=(256, 256)):
     h, w, _ = image.shape
-    scale = max(target_size[0] / h, target_size[1] / w)
-    new_size = (int(w * scale), int(h * scale))
-    resized_image = cv2.resize(image, new_size, interpolation=cv2.INTER_AREA)
-
-    y_offset = np.random.randint(0, resized_image.shape[0] - target_size[0])
-    x_offset = np.random.randint(0, resized_image.shape[1] - target_size[1])
-    cropped_image = resized_image[y_offset:y_offset + target_size[0], x_offset:x_offset + target_size[1]]
-    return cropped_image
+    desired_size = target_size[0]
+    delta_w = desired_size - w
+    delta_h = desired_size - h
+    top, bottom = delta_h // 2, delta_h - delta_h // 2
+    left, right = delta_w // 2, delta_w - delta_w // 2
+    new_image = cv2.copyMakeBorder(image, top, bottom, left, right, cv2.BORDER_CONSTANT, value=(0, 0, 0))
+    return new_image
 
 def enhance_img(img):
     # CLAHE
@@ -39,6 +38,8 @@ def enhance_img(img):
 
 def preprocessing_img(img):
     if img.shape != (256, 256, 3):
-        img = random_crop_opencv(img)
+        img = pad_to_square_opencv(img)
+    img = enhance_img(img)
+    img = cv2.resize(img, (224, 224))
     img = enhance_img(img)
     return img
