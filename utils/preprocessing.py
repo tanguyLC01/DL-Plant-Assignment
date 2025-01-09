@@ -41,4 +41,5 @@ def preprocessing_img(img):
         img = pad_to_square_opencv(img)
     img = enhance_img(img)
     img = cv2.resize(img, (224, 224))
+    img = enhance_img(img)
     return img
