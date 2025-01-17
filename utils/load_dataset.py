@@ -4,7 +4,7 @@ import cv2
 from torch.utils.data import Dataset
 
 class PlantVillageDataset(Dataset):
-    def __init__(self, root_dir, img_mode='RGB', transform=None, train=True, test_split=0.2, seed=42):
+    def __init__(self, root_dir, img_mode='RGB', transform=None, train=True, test_split=0.3, seed=42):
         self.root_dir = root_dir
         self.transform = transform
         self.train = train
