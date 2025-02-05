@@ -1,4 +1,4 @@
-# DL - Plant Assignment -
+# DL - Plant Assignment
 
 ## Project Description
 This project was inspired by the paper _An ensemble of deep learning architectures for accurate plant
@@ -40,3 +40,4 @@ In the second approach, we augmented the dataset using:
 ## 3. Transformer
 Lastly, we used the ViT-based-patch16-224-in21k transformer from Google and fine-tuned the ViT.
 
+# Results
