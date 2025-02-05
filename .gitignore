@@ -1,1 +1,5 @@
 Plant_leave_diseases_dataset_without_augmentation/
+Plant_leave_diseases_dataset_with_augmentation/
+models/
+models_augmented/
+ViT/XviT.pth
