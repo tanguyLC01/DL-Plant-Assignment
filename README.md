@@ -41,3 +41,9 @@ In the second approach, we augmented the dataset using:
 Lastly, we used the ViT-based-patch16-224-in21k transformer from Google and fine-tuned the ViT.
 
 # Results
+| Technics        | Train Loss       | Test Accuracy  |
+| --------------- |:----------------:| --------------:|
+| Preprocessed    |     0.5282       |    0.8981      |
+| Augmented       |     0.0148       |    0.8706      |
+| Transformer     |     0.000286     |    0.9872      |
+  
