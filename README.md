@@ -20,7 +20,7 @@ We loaded each of the selected models:
 - EfficientNetB3 (Tan and Le, 2019)
 
 Then we modified the last layer of the models and replaced it with a simple linear model : <br>
-4 Dense Layer (256 -> 128 -> 64 -> 1), all activated by ReLU and with a Dropout Rate by 0.25 between the 3 first layers.<br>
+4 Dense Layer (256 -> 128 -> 64 -> 1), all activated by ReLU and with a Dropout Rate of 0.25 between the 3 first layers.<br>
 Training Process : Batch Size = 64, Early stop at 100 steps and epochs = 10.
 
 ## 1. Preprocessing the images
@@ -50,6 +50,10 @@ Lastly, we used the ViT-based-patch16-224-in21k transformer from Google and fine
 | Preprocessed    |     0.5282       |    0.8981      |
 | Augmented       |     0.0148       |    0.8706      |
 | Transformer     |     0.000286     |    0.9872      |
+
+We can see the Transformer perfoms better than with the other techniques. To be noted that we trained the Transformer with the entire dataset at each epoch, without early stopping.
+This means the other two models did not go through as many images as the Transformer did, which could explain the test accuracy difference.
+We can still note that the preprocessed technique gave better results than the augmented one.
 
 # How to Use
 If you want to see the models specifications, there are all in the folder _utils_ in the files _linear_model.py_, _ensemble_learning_.
