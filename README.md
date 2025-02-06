@@ -19,8 +19,8 @@ We loaded each of the selected models:
 - InceptionResNetV2 (Szegedy et al., 2017),
 - EfficientNetB3 (Tan and Le, 2019)
 
-Then we modified the last layer of the models and replaced it with a simple linear model :
-4 Dense Layer (256 -> 128 -> 64 -> 1), all activated by ReLU and with a Dropout Rate by 0.25 between the 3 first layers.
+Then we modified the last layer of the models and replaced it with a simple linear model : <br>
+4 Dense Layer (256 -> 128 -> 64 -> 1), all activated by ReLU and with a Dropout Rate by 0.25 between the 3 first layers.<br>
 Training Process : Batch Size = 64, Early stop at 100 steps and epochs = 10.
 
 ## 1. Preprocessing the images
