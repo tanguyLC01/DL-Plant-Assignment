@@ -58,6 +58,6 @@ We can still note that the preprocessed technique gave better results than the a
 # How to Use
 If you want to see the models specifications, there are all in the folder _utils_ in the files _linear_model.py_, _ensemble_learning_.
 The preprocessing techniques : _utils > preprocessing.py_
-To run the data augmentation, run in console : python run_augmentatio.py at the root level of the project
+To run the data augmentation, run in console : python run_augmentation.py at the root level of the project
 The models training are in _model_augmented.ipynb, model_non_augmented.ipynb, ViT > create_XVit.ipynb_
   
